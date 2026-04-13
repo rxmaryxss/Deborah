@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>you weren't supposed to find this</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="scanline"></div>
+<div id="noise"></div>
+<div id="glitch-overlay"></div>
+
+<main id="app">
+
+  <!-- BOOT SCREEN -->
+  <section id="boot" class="screen active">
+    <div class="terminal">
+      <div class="term-line" id="boot-log"></div>
+      <span class="cursor">█</span>
+    </div>
+  </section>
+
+  <!-- INTRUSION WARNING -->
+  <section id="warning" class="screen">
+    <div class="warn-wrap">
+      <p class="warn-label">WARNING</p>
+      <h1 class="warn-title">YOU WERE EXPECTED.</h1>
+      <p class="warn-sub" id="warn-sub">We have been waiting since <span id="arrival-time"></span>.</p>
+      <div class="data-strip" id="data-strip"></div>
+      <button class="proceed-btn" onclick="startQuiz()">
+        <span class="blink-text">[ PROCEED ]</span>
+      </button>
+      <p class="warn-fine">closing this tab will not help.</p>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="screen">
+    <div class="q-header">
+      <span class="q-counter" id="q-counter">01 / 06</span>
+      <div class="q-bar"><div class="q-fill" id="q-fill"></div></div>
+    </div>
+    <div class="q-body" id="q-body"></div>
+    <div class="intrusion-msg" id="intrusion-msg"></div>
+    <button class="next-btn" id="next-btn" onclick="nextQ()" disabled>CONTINUE ›</button>
+  </section>
+
+  <!-- PROCESSING -->
+  <section id="processing" class="screen">
+    <div class="proc-wrap">
+      <div class="proc-eye">
+        <div class="eye-outer"></div>
+        <div class="eye-mid"></div>
+        <div class="eye-inner" id="eye-inner"></div>
+      </div>
+      <p class="proc-text" id="proc-text">CROSS-REFERENCING…</p>
+      <div class="proc-bar-wrap"><div class="proc-bar" id="proc-bar"></div></div>
+      <p class="proc-sub" id="proc-sub"></p>
+    </div>
+  </section>
+
+  <!-- PROPHECY -->
+  <section id="prophecy" class="screen">
+    <p class="prop-stamp">TRANSMISSION RECEIVED</p>
+    <div class="prop-box">
+      <div class="prop-corner tl"></div>
+      <div class="prop-corner tr"></div>
+      <div class="prop-corner bl"></div>
+      <div class="prop-corner br"></div>
+      <p class="prop-text" id="prop-text"></p>
+    </div>
+    <p class="prop-footer" id="prop-footer"></p>
+    <button class="again-btn" onclick="restart()">[ RUN AGAIN ]</button>
+  </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
